@@ -3,6 +3,7 @@ import { Droppable, Draggable, type DropResult, type DroppableProvided, type Dra
 import { DndProvider } from './DndProvider';
 import { type Note } from '../types/Note';
 import { NoteCard } from './NoteCard';
+import { SearchBox } from './SearchBox';
 import './NotesGrid.css';
 
 interface NotesGridProps {
@@ -10,6 +11,8 @@ interface NotesGridProps {
 }
 
 export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
+  const [selectedNoteId, setSelectedNoteId] = useState<number | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [notes, setNotes] = useState<Note[]>(() => {
     // Try to get saved order from localStorage
     const savedNotes = localStorage.getItem('notesOrder');
@@ -55,8 +58,51 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
     setNotes(items);
   };
 
+  useEffect(() => {
+    if (selectedNoteId !== null) {
+      const noteElement = document.querySelector(`[data-note-id="${selectedNoteId}"]`);
+      if (noteElement) {
+        noteElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const highlightClass = 'note-highlight';
+        noteElement.classList.add(highlightClass);
+        setTimeout(() => {
+          noteElement.classList.remove(highlightClass);
+        }, 2000); // Remove highlight after 2 seconds
+      }
+      setSelectedNoteId(null);
+    }
+  }, [selectedNoteId]);
+
+  // Removed duplicate setSearchQuery function
+
+  const filteredNotes = searchQuery
+    ? notes.filter(note =>
+        note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        note.content.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : notes;
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  const handleSelectNote = (noteId: number) => {
+    const noteIndex = notes.findIndex(note => note.id === noteId);
+    if (noteIndex > -1) {
+      document.querySelector(`[data-note-id="${noteId}"]`)?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <DndProvider onDragEnd={handleDragEnd}>
+      <SearchBox
+        notes={notes}
+        onSearch={handleSearch}
+        onSelectNote={handleSelectNote}
+      />
       <Droppable droppableId="notes">
         {(provided: DroppableProvided) => (
           <div 
@@ -64,7 +110,7 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            {notes.map((note, index) => (
+            {filteredNotes.map((note: Note, index: number) => (
               <Draggable 
                 key={note.id} 
                 draggableId={note.id.toString()} 
@@ -76,6 +122,7 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     className={`note-wrapper ${snapshot.isDragging ? 'dragging' : ''}`}
+                    data-note-id={note.id}
                   >
                     <NoteCard note={note} />
                   </div>
@@ -99,3 +146,4 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
     </DndProvider>
   );
 };
+

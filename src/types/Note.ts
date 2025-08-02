@@ -7,7 +7,7 @@ export interface Note {
 export const sampleNotes: Note[] = [
   {
     id: 1,
-    title: "सुखकर्ता दुखहर्ता",
+    title: "सुखकर्ता दुखहर्ता - Sukhakarta Dukhaharta",
     content: `सुखकर्ता दुःखहर्ता वार्ता विघ्नाची ।
         नुरवी पुरवी प्रेम कृपा जयाची ।
         सर्वांगी सुंदर उटी शेंदुराची ।
@@ -28,7 +28,7 @@ export const sampleNotes: Note[] = [
   },
   {
     id: 2,
-    title: "शेंदूर लाल चढायो",
+    title: "शेंदूर लाल चढायो - Shendur Laal Chadhayo",
     content: `शेंदुर लाल चढ़ायो अच्छा गजमुखको।
         दोंदिल लाल बिराजे सुत गौरिहरको।
         हाथ लिए गुडलद्दु सांई सुरवरको।
@@ -49,7 +49,7 @@ export const sampleNotes: Note[] = [
   },
   {
     id: 3,
-    title: "नाना परिमळ",
+    title: "नाना परिमळ - Nana Parimal",
     content: `नाना परिमळ दुर्वा शेंदुर शमिपत्रें । 
       लाडू मोदक अन्ने परिपूरित पात्रें ।
       ऐसें पूजन केल्या बीजाक्षर मंत्रें । 
@@ -70,7 +70,7 @@ export const sampleNotes: Note[] = [
   },
   {
     id: 4,
-    title: "देवीची आरती",
+    title: "देवीची आरती - Devi Chi Aarti",
     content: `दुर्गे दुर्घट भारी तुजविण संसारी ।
       अनाथनाथे अंबे करुणा विस्तारी ।
       वारी वारी जन्ममरणाते वारी ।
@@ -92,7 +92,7 @@ export const sampleNotes: Note[] = [
   },
   {
     id: 5,
-    title: "श्री शंकराची आरती",
+    title: "श्री शंकराची आरती - Shri Shankarachi Aarti",
     content: `लवथवती विक्राळा ब्रह्मांडी माळा ।
       विषें कंठ काळा त्रिनेत्री ज्वाला ।
       लावण्यसुंदर मस्तकी बाळा ।
@@ -118,7 +118,7 @@ export const sampleNotes: Note[] = [
   },
   {
     id: 6,
-    title: "श्री दत्ताची आरती",
+    title: "श्री दत्ताची आरती - Shri Dattachi Aarti",
     content: `त्रिगुणात्मक त्रिमूर्ती दत्ता हा जाणा |
       त्रिगुणी अवतार त्रैलोक्यराणा |
       नेती नेती शब्द नये अनुमाना |
