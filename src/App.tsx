@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>गणपती आरती</h1>
+        <h1>आरती संग्रह</h1>
       </header>
       <main>
         <NotesGrid notes={sampleNotes} />

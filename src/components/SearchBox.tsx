@@ -56,7 +56,7 @@ export const SearchBox = ({ notes, onSearch, onSelectNote }: SearchBoxProps) => 
         <input
           type="text"
           className="search-input"
-          placeholder="Search notes..."
+          placeholder="Search aarti..."
           value={query}
           onChange={handleSearchChange}
         />
@@ -70,7 +70,7 @@ export const SearchBox = ({ notes, onSearch, onSelectNote }: SearchBoxProps) => 
               setShowSuggestions(false);
             }}
           >
-            ×
+            X
           </button>
         )}
       </div>
