@@ -9,7 +9,7 @@ function App() {
         <h1>आरती संग्रह</h1>
       </header>
       <main>
-        <NotesGrid notes={sampleNotes} />
+        <NotesGrid notes={sampleNotes()} />
       </main>
     </div>
   )

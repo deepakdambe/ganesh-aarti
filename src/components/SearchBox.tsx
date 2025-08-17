@@ -33,9 +33,8 @@ export const SearchBox = ({ notes, onSearch, onSelectNote }: SearchBoxProps) => 
     // Update suggestions
     if (searchQuery.trim()) {
       const matchingNotes = notes.filter(note =>
-        note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        note.content.toLowerCase().includes(searchQuery.toLowerCase())
-      ).slice(0, 5); // Limit to 5 suggestions
+        note.title.toLowerCase().includes(searchQuery.toLowerCase())
+      ).slice(0, 4); // Limit to 4 suggestions
       setSuggestions(matchingNotes);
       setShowSuggestions(true);
     } else {

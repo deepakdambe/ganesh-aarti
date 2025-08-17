@@ -5,10 +5,22 @@ export interface Note {
   favorite?: boolean;
 }
 
-export const sampleNotes: Note[] = [
+let counter: number = 1;
+
+// Helper function to add "id" prefix
+export const sampleNotes = (): Note[] => {
+
+  return sampleNotes2.map(note => ({
+    ...note,
+    title: `${note.id < 10 ? `0${note.id}` : note.id} - ${note.title}`
+    
+  }));
+};
+
+const sampleNotes2: Note[] = [
   {
-    id: 1,
-    title: "01 - सुखकर्ता दुखहर्ता - Sukhakarta Dukhaharta",
+    id: counter++,
+    title: "सुखकर्ता दुखहर्ता - Sukhakarta Dukhaharta",
     content: `सुखकर्ता दुःखहर्ता वार्ता विघ्नाची ।
         नुरवी पुरवी प्रेम कृपा जयाची ।
         सर्वांगी सुंदर उटी शेंदुराची ।
@@ -28,8 +40,8 @@ export const sampleNotes: Note[] = [
         संकटी पावावे, निर्वाणी रक्षावे सुरवरवंदना ।। ३ ।। `
   },
   {
-    id: 2,
-    title: "02 - शेंदूर लाल चढायो - Shendur Laal Chadhayo",
+    id: counter++,
+    title: "शेंदूर लाल चढायो - Shendur Laal Chadhayo",
     content: `शेंदुर लाल चढ़ायो अच्छा गजमुखको।
         दोंदिल लाल बिराजे सुत गौरिहरको।
         हाथ लिए गुडलद्दु सांई सुरवरको।
@@ -49,8 +61,8 @@ export const sampleNotes: Note[] = [
         गोसावीनंदन निशिदिन गुन गावे ॥३॥ जय जय`
   },
   {
-    id: 3,
-    title: "03 - नाना परिमळ - Nana Parimal",
+    id: counter++,
+    title: "नाना परिमळ - Nana Parimal",
     content: `नाना परिमळ दुर्वा शेंदुर शमिपत्रें । 
       लाडू मोदक अन्ने परिपूरित पात्रें ।
       ऐसें पूजन केल्या बीजाक्षर मंत्रें । 
@@ -70,8 +82,38 @@ export const sampleNotes: Note[] = [
       गोसावीनंदन रत नामस्मरणीं ॥३॥ जय देव`
   },
   {
-    id: 4,
-    title: "04 - देवीची आरती (दुर्गे दुर्घट भारी) - Devichi Aarti (Durge Durghat Bhari)",
+    id: counter++,
+    title: "उंदरावरि बैसोनि - Undaravari Baisoni",
+    content: `उंदरावरि बैसोनि दूडदूडा येसी। 
+      हाती मोद्क लाडू घेउनियां खासी। 
+      भक्तांचे संकटी धावूनि पावसी। 
+      दास विनविती तुझियां चरणासी |
+      जय देव जय देव जय गणराजा॥१॥
+
+      जय देव जय देव जय गणराजा |
+      सकळ देवां आधी तूं देव माझा॥ जय देव.॥धृ.॥
+
+      भाद्रपदमासी होसी तू भोळा। 
+      आरक्त पुष्पांच्या घालूनिया माळा। 
+      कपाळी लावूनी कस्तुरी टीळा। 
+      तेणे तू दिससी सुंदर सांवळा॥ 
+      जय देव जय देव जय गणराजा॥२॥
+
+      प्रदोषाचे दिवशी चंद्र श्रापीला। 
+      समयी देवे मोठा आकांत केला। इ
+      ंदु येवोनि चरणी लागला। 
+      श्रीराम बहुत श्राप दिधला॥ 
+      जय देव जय देव जय गणराजा ॥३॥
+
+      पार्वतीच्या सुता तू ये गणनाथा। 
+      नेत्र शिणले तुझी वाट पाहतां॥ 
+      किती अंत पाहासी बा विघ्नहर्ता। 
+      मला बुद्धी देई तू गणनाथा॥ 
+      जय देव जय देव जय गणराजा ॥४॥`
+  },
+  {
+    id: counter++,
+    title: "देवीची आरती (दुर्गे दुर्घट भारी) - Devichi Aarti (Durge Durghat Bhari)",
     content: `दुर्गे दुर्घट भारी तुजविण संसारी ।
       अनाथनाथे अंबे करुणा विस्तारी ।
       वारी वारी जन्ममरणाते वारी ।
@@ -92,8 +134,8 @@ export const sampleNotes: Note[] = [
       नरहरि तल्लीन झाला पदपंकजलेशा ।। ३ ।। जय देवी`
   },
   {
-    id: 5,
-    title: "05 - शंकराची आरती (लवथवती विक्राळा) - Shri Shankarachi Aarti (Lavathvati Vikrala)",
+    id: counter++,
+    title: "शंकराची आरती (लवथवती विक्राळा) - Shri Shankarachi Aarti (Lavathvati Vikrala)",
     content: `लवथवती विक्राळा ब्रह्मांडी माळा ।
       विषें कंठ काळा त्रिनेत्री ज्वाला ।
       लावण्यसुंदर मस्तकी बाळा ।
@@ -118,8 +160,8 @@ export const sampleNotes: Note[] = [
       रघुकुळटिळक रामदास अंतरीं ।।4।।  जय देव`
   },
   {
-    id: 6,
-    title: "06 - दत्ताची आरती (त्रिगुणात्मक त्रिमूर्ती) - Shri Dattachi Aarti (Trigunatmak Trimurti)",
+    id: counter++,
+    title: "दत्ताची आरती (त्रिगुणात्मक त्रिमूर्ती) - Shri Dattachi Aarti (Trigunatmak Trimurti)",
     content: `त्रिगुणात्मक त्रिमूर्ती दत्ता हा जाणा |
       त्रिगुणी अवतार त्रैलोक्यराणा |
       नेती नेती शब्द नये अनुमाना |
@@ -144,8 +186,8 @@ export const sampleNotes: Note[] = [
       एका जनार्दनी श्रीदत्तध्यान ||४||  जय देव`
   },
   {
-    id: 7,
-    title: "07 - विठोबाची आरती (युगें अठ्ठावीस) - Vitthobachi Aarti (Yugen Aththavis)",
+    id: counter++,
+    title: "विठोबाची आरती (युगें अठ्ठावीस) - Vitthobachi Aarti (Yugen Aththavis)",
     content: `युगें अठ्ठावीस विटेवरी उभा |
       वामांगी रखुमाई दिसे दिव्या शोभा |
       पुंडलिकाच्या भेटी परब्रह्मा आले गा |
@@ -175,8 +217,8 @@ export const sampleNotes: Note[] = [
       केशवासी नामदेव भावें ओवाळिती|| 5 ||  जय देव`
   },
   {
-    id: 8,
-    title: "08 - पांडुरंगाची आरती (येई हो विठ्ठले) - Pandurangachi Aarti (Ye Ho Vitthale)",
+    id: counter++,
+    title: "पांडुरंगाची आरती (येई हो विठ्ठले) - Pandurangachi Aarti (Ye Ho Vitthale)",
     content: `येई हो विठ्ठले माझे माऊली ये ॥
       निढळावरी कर ठेऊनी वाट मी पाहे ॥ धृ. ॥
 
@@ -197,8 +239,8 @@ export const sampleNotes: Note[] = [
       येई हो विठ्ठले माझे माऊली ये ॥ ४ ॥`
   },
   {
-    id: 9,
-    title: "09 - हनुमंताची आरती (सत्राणें उड्डाणें) - Hanumantachi Aarti (Satrane Uddane)",
+    id: counter++,
+    title: "हनुमंताची आरती (सत्राणें उड्डाणें) - Hanumantachi Aarti (Satrane Uddane)",
     content: `सत्राणें उड्डाणें हुंकार वदनी |
       करि डळमळ भूमंडळ सिंधुजळ गगनीं |
       कडाडिले ब्रम्हांड धाके त्रिभुवनी |
@@ -213,8 +255,8 @@ export const sampleNotes: Note[] = [
       रामी रामदास शक्तीचा शोध ||2|| जय देव `
   },
   {
-    id: 10,
-    title: "10 - नवरात्र आरती (अश्विन शुद्ध) - Navratra Aarti (Ashwin Shuddha)",
+    id: counter++,
+    title: "नवरात्र आरती (अश्विन शुद्ध) - Navratra Aarti (Ashwin Shuddha)",
     content: `अश्विन शुद्ध शुक्लपक्षी अंबा बैसली सिंहासनी हो । 
       प्रतिपदेपासूनी घटस्थापना ती करुनी हो
       मूलमंत्र जप करुनी भोंवते रक्षक ठेवूनी हो । 
@@ -269,8 +311,8 @@ export const sampleNotes: Note[] = [
       विप्ररामदासा आश्रय दिधला चरणी हो ॥१०॥`
   },
   {
-    id: 11,
-    title: "11 - साईबाबांची आरती (आरती साईबाबा) - Saibaba Aarti (Aarti Saibaba)",
+    id: counter++,
+    title: "साईबाबांची आरती (आरती साईबाबा) - Saibaba Aarti (Aarti Saibaba)",
     content: `आरती साईबाबा । सौख्यदातार जीवा।
       चरणरजातली । द्यावा दासा विसावा, भक्ता विसावा ।। आ०।।ध्रु ०।।
 
@@ -296,8 +338,8 @@ export const sampleNotes: Note[] = [
       पाजावे माधवा या । सांभाळ आपुली भाक ।। आ०।। ७ ।।`
   },
   {
-    id: 12,
-    title: "12 - ज्ञानेश्वर आरती (आरती ज्ञानराजा) - Gnyaneshwer Aarti (Aarti Gnyanraja)",
+    id: counter++,
+    title: "ज्ञानेश्वर आरती (आरती ज्ञानराजा) - Gnyaneshwer Aarti (Aarti Gnyanraja)",
     content: `आरती ज्ञानराजा | महाकैवल्यतेजा |
       सेविती साधुसंत || मनु वेधला माझा || आरती || धृ ||
 
@@ -312,8 +354,8 @@ export const sampleNotes: Note[] = [
       आरती ज्ञानराजा | महाकैवल्यतेजा || सेविती || ३ ||`
   },
   {
-    id: 13,
-    title: "13 - श्री सत्यनारायणाची आरती (जय जय दीनदयाळा) - Shri Satyanarayanachi Aarti (Jay Jay Deendayala)",
+    id: counter++,
+    title: "श्री सत्यनारायणाची आरती (जय जय दीनदयाळा) - Shri Satyanarayanachi Aarti (Jay Jay Deendayala)",
     content: `जय जय दीनदयाळा सत्यनारायण देवा |
       पंचारति ओंवाळू श्रीपति तुज भक्तिभावा || धृ ||
 
@@ -355,8 +397,8 @@ export const sampleNotes: Note[] = [
       जय जय दीनदयाळा सत्यनारायण देवा  || ७ ||`
   },
   {
-    id: 14,
-    title: "14 - सद्गुरूंची आरती (धन्य धन्य हो) - Sadguru Aarti (Dhanya Dhanya Ho)",
+    id: counter++,
+    title: "सद्गुरूंची आरती (धन्य धन्य हो) - Sadguru Aarti (Dhanya Dhanya Ho)",
     content: `धन्य धन्य हो प्रदक्षिणा सद्गुरुरायाची।
       झाली त्वरा सुरवरां विमान उतरायाची।। धृ.।।
 
@@ -376,8 +418,8 @@ export const sampleNotes: Note[] = [
       श्रीरंगात्मज विठ्ठल पुढे उभा राहिला।। ५।।`
   },
   {
-    id: 15,
-    title: "15 - कृष्णाची आरती (ओवाळू आरती) - Krishnachi Aarti (Ovaalu Aarti)",
+    id: counter++,
+    title: "कृष्णाची आरती (ओवाळू आरती) - Krishnachi Aarti (Ovaalu Aarti)",
     content: `ओवाळूं आरती मदनगोपाळा ।
       श्यामसुंदर गळां वैजयंतीमाळा ।। धृ० ।।
 
@@ -397,8 +439,8 @@ export const sampleNotes: Note[] = [
       पाहतां अवघें झाले तद्रूप ।। ५ ।।`
   },
   {
-    id: 16,
-    title: "16 - दशावतार आरती (आरती सप्रेम) - Dashavatara Aarti (Aarti Saprem)",
+    id: counter++,
+    title: "दशावतार आरती (आरती सप्रेम) - Dashavatara Aarti (Aarti Saprem)",
     content: `आरती सप्रेम जय जय विठ्ठल परब्रह्म ।
       भक्तसंकटी नानास्वरूपीं स्थापिसी स्वधर्म ॥ धृ. ॥
 
@@ -438,8 +480,8 @@ export const sampleNotes: Note[] = [
       बहिरवि जान्हवि द्यावी निजसुखाआनंद सेवा ॥ ७ ॥`
   },
   {
-    id: 17,
-    title: "17 - तुकाराम आरती (आरती तुकारामा) - Tukaram Aarti (Aarti Tukarama)",
+    id: counter++,
+    title: "तुकाराम आरती (आरती तुकारामा) - Tukaram Aarti (Aarti Tukarama)",
     content: `आरती तुकारामा ।
       स्वामी सद्गुरु धाम ॥
       सच्चिदानंद मूर्ती ।
@@ -467,8 +509,8 @@ export const sampleNotes: Note[] = [
       पाय दाखवी आम्हा ॥`
   },
   {
-    id: 18,
-    title: "18 - निरोप आरती (जाहले भजन) - Nirop Aarti (Jahale Bhajan)",
+    id: counter++,
+    title: "निरोप आरती (जाहले भजन) - Nirop Aarti (Jahale Bhajan)",
     content: `जाहले भजन आम्ही नमितो तव चरण ।
       वारुनिया विघ्ने देवा रक्षावे दीना ॥धृ॥
 
@@ -497,8 +539,8 @@ export const sampleNotes: Note[] = [
       चुकले आमचे काही त्याची क्षमा असावी ॥८॥`
   },
   {
-    id: 19,
-    title: "19 - घालीन लोटांगण - Ghalin Lotangan",
+    id: counter++,
+    title: "घालीन लोटांगण - Ghalin Lotangan",
     content: `घालीन लोटांगण वंदीन चरण ।
       डोळ्यांनी पाहिन रुप तुझे ॥
       प्रेमें आलिंगिन आनंदे पूजीन ।
@@ -523,8 +565,8 @@ export const sampleNotes: Note[] = [
       हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ॥५॥`
   },
   {
-    id: 20,
-    title: "20 - मंत्र पुष्पांजलि - Mantra Pushpanjali",
+    id: counter++,
+    title: "मंत्र पुष्पांजलि - Mantra Pushpanjali",
     content: `ॐ यज्ञेन यज्ञमयजन्त देवास्तानि धर्माणि प्रथमान्यासान्।
       ते ह नाकं महिमान: सचंत।
       यत्र पुर्वे साध्या: संति देवा:।
@@ -572,35 +614,6 @@ export const sampleNotes: Note[] = [
       सूर्य
       ॐ भास्कराय विद्महे, महद्युतिकराय धीमहि ।
       तन्नो आदित्य प्रचोदयात् ।।`
-  },
-  {
-    id: 21,
-    title: "21 - उंदरावरि बैसोनि - Undaravari Baisoni",
-    content: `उंदरावरि बैसोनि दूडदूडा येसी। 
-      हाती मोद्क लाडू घेउनियां खासी। 
-      भक्तांचे संकटी धावूनि पावसी। 
-      दास विनविती तुझियां चरणासी |
-      जय देव जय देव जय गणराजा॥१॥
-
-      जय देव जय देव जय गणराजा |
-      सकळ देवां आधी तूं देव माझा॥ जय देव.॥धृ.॥
-
-      भाद्रपदमासी होसी तू भोळा। 
-      आरक्त पुष्पांच्या घालूनिया माळा। 
-      कपाळी लावूनी कस्तुरी टीळा। 
-      तेणे तू दिससी सुंदर सांवळा॥ 
-      जय देव जय देव जय गणराजा॥२॥
-
-      प्रदोषाचे दिवशी चंद्र श्रापीला। 
-      समयी देवे मोठा आकांत केला। इ
-      ंदु येवोनि चरणी लागला। 
-      श्रीराम बहुत श्राप दिधला॥ 
-      जय देव जय देव जय गणराजा ॥३॥
-
-      पार्वतीच्या सुता तू ये गणनाथा। 
-      नेत्र शिणले तुझी वाट पाहतां॥ 
-      किती अंत पाहासी बा विघ्नहर्ता। 
-      मला बुद्धी देई तू गणनाथा॥ 
-      जय देव जय देव जय गणराजा ॥४॥`
   }
 ];
+
