@@ -51,7 +51,6 @@
   line-height: 1.8;
   white-space: pre-line;
   font-size: 1.1rem;
-  text-align: center;
   font-family: 'Arial Unicode MS', 'Nirmala UI', sans-serif;
   max-height: 0;
   overflow: hidden;
@@ -60,7 +59,7 @@
 }
 
 .note-content.expanded {
-  max-height: 2000px;
+  max-height: 50000px; /* Increased to accommodate more content */
   opacity: 1;
   margin: 1rem 0;
 }
