@@ -7,6 +7,28 @@
   margin: 0 auto;
 }
 
+.favorites-grid {
+  margin-bottom: 1rem;
+}
+
+.favorites-grid.hidden {
+  display: none;
+}
+
+.section-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
 .note-wrapper {
   transition: transform 0.2s ease;
   cursor: grab;
