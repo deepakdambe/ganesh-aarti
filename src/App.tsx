@@ -16,7 +16,7 @@ function App() {
   };
 
   const handleScroll = () => {
-    if (window.pageYOffset > 200) { // Show button after scrolling 200px
+    if (window.pageYOffset > 200) { // Show button after scrolling 300px
       setShowGoToTop(true);
     } else {
       setShowGoToTop(false);
@@ -31,7 +31,7 @@ function App() {
     // Automatically hide the banner after 5 seconds
     const timer = setTimeout(() => {
       handleCloseBanner();
-    }, 4000);
+    }, 5000);
 
     window.addEventListener('scroll', handleScroll);
 
