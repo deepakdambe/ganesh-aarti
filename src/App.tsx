@@ -12,11 +12,11 @@ function App() {
     setBannerClosing(true);
     setTimeout(() => {
       setShowBanner(false);
-    }, 500); // Duration of slideUp animation
+    }, 400); // Duration of slideUp animation
   };
 
   const handleScroll = () => {
-    if (window.pageYOffset > 200) { // Show button after scrolling 300px
+    if (window.pageYOffset > 200) { // Show button after scrolling 200px
       setShowGoToTop(true);
     } else {
       setShowGoToTop(false);
