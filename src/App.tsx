@@ -12,7 +12,7 @@ function App() {
     setBannerClosing(true);
     setTimeout(() => {
       setShowBanner(false);
-    }, 400); // Duration of slideUp animation
+    }, 500); // Duration of slideUp animation
   };
 
   const handleScroll = () => {
@@ -31,7 +31,7 @@ function App() {
     // Automatically hide the banner after 5 seconds
     const timer = setTimeout(() => {
       handleCloseBanner();
-    }, 5000);
+    }, 3000);
 
     window.addEventListener('scroll', handleScroll);
 
