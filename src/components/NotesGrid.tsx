@@ -215,8 +215,9 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
               } as React.CSSProperties}
             >
               Deepak D Dambe
+              <br />
               <a 
-                href="/assets/DeepAarti.apk"
+                href="https://drive.google.com/file/d/1A-0zbEP2y-1avPfbYPLGSHxYtXrBw8RT/view?usp=drive_link"
                 download
                 style={{
                   display: 'block',
@@ -225,7 +226,34 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
                   textDecoration: 'underline'
                 }}
               >
-                Download Android App
+                Download Android App.
+              </a>
+              <br />
+              <br />
+              <a
+                href="/assets/GaneshAarti.apk"
+                download
+                style={{
+                  display: 'block',
+                  marginTop: '10px',
+                  color: '#0066cc',
+                  textDecoration: 'underline'
+                }}
+              >
+                Download Android App Dir 1.
+              </a>
+              <br />
+              <a
+                href="GaneshAarti.apk"
+                download
+                style={{
+                  display: 'block',
+                  marginTop: '10px',
+                  color: '#0066cc',
+                  textDecoration: 'underline'
+                }}
+              >
+                Download Android App Dir 2.
               </a>
             </div>
           </div>
