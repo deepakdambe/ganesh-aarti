@@ -215,6 +215,18 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
               } as React.CSSProperties}
             >
               Deepak D Dambe
+              <a 
+                href="/assets/DeepAarti.apk"
+                download
+                style={{
+                  display: 'block',
+                  marginTop: '10px',
+                  color: '#0066cc',
+                  textDecoration: 'underline'
+                }}
+              >
+                Download Android App
+              </a>
             </div>
           </div>
         )}
