@@ -22,7 +22,7 @@ export const NoteCard = ({ note, onToggleFavorite }: NoteCardProps) => {
   };
 
   return (
-    <div className="note-card">
+    <div className={`note-card ${isExpanded ? 'expanded-bg' : ''}`}>
       <div className="note-header">
         <h2 
           className={`note-title ${isExpanded ? 'expanded' : ''}`} 
