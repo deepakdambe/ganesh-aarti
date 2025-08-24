@@ -214,20 +214,22 @@ export const NotesGrid = ({ notes: initialNotes }: NotesGridProps) => {
               gridColumn: '1 / -1'
               } as React.CSSProperties}
             >
-              Deepak D Dambe
+              Created By - Deepak D Dambe.
               <br />              
-              <a
-                href="GaneshAarti.apk"
-                download
-                style={{
-                  display: 'block',
-                  marginTop: '10px',
-                  color: '#0066cc',
-                  textDecoration: 'underline'
-                }}
-              >
-                Download Android App.
-              </a>
+              {navigator.userAgent.indexOf('DeepAartiApp') === -1 && (
+                <a
+                  href="GaneshAarti.apk"
+                  download
+                  style={{
+                    display: 'block',
+                    marginTop: '10px',
+                    color: '#0066cc',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  Download Android App.
+                </a>
+              )}
             </div>
           </div>
         )}

@@ -49,7 +49,23 @@ function App() {
             <img src="./ganesh.png" alt="Lord Ganesh" className="ganesh-icon" style={{ height: '5em', marginRight: '0.5em' }} />
             <div>
               <h2>Welcome to आरती संग्रह!</h2>
-              <p>Explore our collection of beautiful aartis</p>
+              { navigator.userAgent.indexOf('DeepAartiApp') === -1 && (
+                  <a
+                    href="GaneshAarti.apk"
+                    download
+                    style={{
+                      display: 'block',
+                      marginTop: '10px',
+                      color: '#ffffff',
+                      textDecoration: 'underline',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    Download Android App.
+                  </a>
+              )}              
+              <p style={{ fontSize: '0.8em', textAlign: 'right' }}>Created By - Deepak D. Dambe</p>
+
             </div>
             <button onClick={handleCloseBanner}>×</button>
           </div>
