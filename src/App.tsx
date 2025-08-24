@@ -64,7 +64,7 @@ function App() {
                     Download Android App.
                   </a>
               )}              
-              <p style={{ fontSize: '0.8em', textAlign: 'right' }}>Created By - Deepak D. Dambe</p>
+              <p style={{ fontSize: '0.8em', textAlign: 'right' }}>Created By - Deepak D. Dambe.</p>
 
             </div>
             <button onClick={handleCloseBanner}>×</button>
